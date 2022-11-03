@@ -1,32 +1,30 @@
-export const useValue = () =>{
+export const useValues = () =>{
     let val = {
-        value: localStorage.getItem('Michi')
+        Value: 0
     }
 
-    const subirValor = () =>{
-        val.value++
+    const subirval = () =>{
+        val.Value++
     }
 
-    const bajarValor = () =>{
-        if(val.value <= 0){
-            val.value= 0
+    const bajarval = () =>{
+        if(val.Value === 0){
+            val.Value = 0
         } else{
-            val.value--
+            val.Value--
         }
     }
 
-    const updateValor = (el) => {
-        localStorage.setItem('Michi',val.value);
-        const currentValue = localStorage.getItem('Michi')
-        el.innerHTLM = currentValue;
+    const updateval = (el) => {
+        el.innerHTLM = val.Value;
     } 
 
 
     return{
        val,
-       subirValor,
-       bajarValor,
-       updateValor 
+       subirval,
+       bajarval,
+       updateval
     }
 
 }

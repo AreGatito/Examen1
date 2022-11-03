@@ -1,25 +1,24 @@
 import {getControlesBottoms} from "./helpers/getControlesBottoms.js";
 import {getCurrentValue} from "./helpers/getCurrentValue.js";
-import {useValue} from "./hooks/useValue.js";
+import {useValues} from "./hooks/useValue.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const{Michi} = getCurrentValue ();
-    const{ValueUp,ValueDown} = getControlesBottoms ();
-    const{val,subirValor,bajarValor,updateValor } = useValue ();
+    const{Michi} = getCurrentValue();
+    const{ValueUp,ValueDown} = getControlesBottoms();
+    const{val,subirval,bajarval,updateval} = useValues();
 
-    Michi.innerHTML = localStorage.getItem('Michi');
+    Michi.innerHTML = val.Value;
 
     ValueUp.onclick = () => {
-    subirValor();
-    updateValor(Michi);
+    subirval();
+    updateval(ValueUp);
     }
 
     ValueDown.onclick = () => {
-    bajarValor();
-    updateValor(val);
+    bajarval();
+    updateval(ValueDown);
     }
 
 });
-
 
