@@ -1,7 +1,7 @@
 export const getCurrentValue = () => {
-    const Michi = document.querySelector("#CurrentValue");
+    const Current = document.querySelector("#Current");
 
     return{
-        Michi
+        Current
     }
 }

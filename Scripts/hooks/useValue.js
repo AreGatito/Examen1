@@ -1,30 +1,30 @@
 export const useValues = () =>{
-    let val = {
-        Value: 0
+    let number = {
+        value: 0
     }
 
     const subirval = () =>{
-        val.Value++
+        number.value++
     }
 
     const bajarval = () =>{
-        if(val.Value === 0){
-            val.Value = 0
+        if(number.value === 0){
+            number.value = 0
         } else{
-            val.Value--
+            number.value--
         }
     }
 
-    const updateval = (el) => {
-        el.innerHTLM = val.Value;
+    const updatenumber = (el) => {
+        el.innerHTLM = number.value;
     } 
 
 
     return{
-       val,
+       number,
        subirval,
        bajarval,
-       updateval
+       updatenumber
     }
 
 }

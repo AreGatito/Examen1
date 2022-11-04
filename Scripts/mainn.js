@@ -4,20 +4,20 @@ import {useValues} from "./hooks/useValue.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const{Michi} = getCurrentValue();
+    const{Current} = getCurrentValue();
     const{ValueUp,ValueDown} = getControlesBottoms();
-    const{val,subirval,bajarval,updateval} = useValues();
+    const{number,subirval,bajarval,updatenumber} = useValues();
 
-    Michi.innerHTML = val.Value;
+    Current.innerHTML = number.value;
 
     ValueUp.onclick = () => {
     subirval();
-    updateval(ValueUp);
+    updatenumber(Current);
     }
 
     ValueDown.onclick = () => {
     bajarval();
-    updateval(ValueDown);
+    updatenumber(Current);
     }
 
 });
