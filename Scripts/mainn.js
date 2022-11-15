@@ -1,24 +1,36 @@
-import {getControlesBottoms} from "./helpers/getControlesBottoms.js";
-import {getCurrentValue} from "./helpers/getCurrentValue.js";
-import {useValues} from "./hooks/useValue.js";
+window.onload = () => {
+    const current = document.querySelector('#Current');
+    const subir = document.querySelector('#Value-up');
+    const bajar = document.querySelector('#Value-Down');
 
-document.addEventListener("DOMContentLoaded", () => {
+    const counter = {
+        value: 0,
 
-    const{Current} = getCurrentValue();
-    const{ValueUp,ValueDown} = getControlesBottoms();
-    const{number,subirval,bajarval,updatenumber} = useValues();
-
-    Current.innerHTML = number.value;
-
-    ValueUp.onclick = () => {
-    subirval();
-    updatenumber(Current);
+        defValue() {
+            current.innerHTML = this.value
+        },
+        subir() {
+            this.value++;
+            this.defValue();
+        },
+        bajar() {
+            if(this.value ===0) {
+                this.value = 0;
+            }else {
+                this.value--;
+                this.defValue();
+            }
+        }
     }
 
-    ValueDown.onclick = () => {
-    bajarval();
-    updatenumber(Current);
+    counter.defValue();
+
+    subir.onclick = () => {
+        counter.subir();
     }
 
-});
+    bajar.onclick = () => {
+        counter.bajar();
+    }
+}
 

@@ -58,9 +58,9 @@ main {
 #Value-Down{
     position: relative;
     font-size: 58px;
-    width: 98px;
-    height: 98px;
-    padding: 48px;
+    width: 198px;
+    height: 168px;
+    padding: 50px;
     background-color: rgb(230, 220, 134);
     border-radius: 238px;
     border: none;
@@ -68,18 +68,9 @@ main {
 #Value-up {
     right: 45px;
 }
-#Value-up i{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
+
 #Value-Down{
     left: 45px;
-}
-#Value-Down i{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
 }
 
 .Info{
